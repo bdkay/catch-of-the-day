@@ -11,13 +11,12 @@ const Root = () => {
     <Router>
       <Switch>
         { /* When at the homepage, show the StorePicker component */ }
-        <Route exactly pattern="/" component={StorePicker} />
+        <Route exact path="/" component={StorePicker} />
         { /* After a storeId has been set, show the main app component */ }
-        <Route exactly pattern="/store/:storeId" component={App} />
-        <Route component={StorePicker} />
+        <Route path="/store/:storeId" component={App} />
       </Switch>
     </Router>
   );
 };
 
-render(<App />, document.getElementById('main'));
+render(<Root />, document.getElementById('main'));
