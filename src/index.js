@@ -14,6 +14,7 @@ const Root = () => {
         <Route exact path="/" component={StorePicker} />
         { /* After a storeId has been set, show the main app component */ }
         <Route path="/store/:storeId" component={App} />
+        <Route component={StorePicker} />
       </Switch>
     </Router>
   );
