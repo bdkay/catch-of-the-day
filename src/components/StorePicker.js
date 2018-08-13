@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import { getFunName } from '../helpers';
 
 class StorePicker extends Component {
+  // Constructors are good if we want to bind functions we're going to use more than once to the class
+  
+  // constructor(){
+  //   super();
+  //   this.goToStore = this.goToStore.bind(this);
+  // }
+  
   goToStore(event){
     event.preventDefault();
     console.log("You changed the url");
@@ -13,7 +20,11 @@ class StorePicker extends Component {
   render(){
     // We can use this inside render because render is always bound to the component
     return (
-      <form className="store-selector" onSubmit={this.goToStore}>
+      // Can bind this function to the class onSubmit
+      // <form className="store-selector" onSubmit={this.goToStore.bind(this)}>
+  
+      // (e) => this.goToStore(e) also binds goToStore
+      <form className="store-selector" onSubmit={(e) => this.goToStore(e)}>
         <h2>Please Enter a Store</h2>
         <input
           type="text"
