@@ -23,7 +23,7 @@ class StorePicker extends Component {
       // Can bind this function to the class onSubmit
       // <form className="store-selector" onSubmit={this.goToStore.bind(this)}>
   
-      // (e) => this.goToStore(e) also binds goToStore
+      // (e) => this.goToStore(e) creates an individual function for every single component that gets rendered
       <form className="store-selector" onSubmit={(e) => this.goToStore(e)}>
         <h2>Please Enter a Store</h2>
         <input
